@@ -22,10 +22,12 @@ public class Card {
 			case DRAW_TWO:
 			case REVERSE:
 				value = 20;
+				break;
 			case WILD:
 			case WILD_DRAW_FOUR:
 				value = 50;
 				this.color = Color.NONE;
+				break;
 			case NUMERIC:
 				System.out.println("Attempt to instantiate numeric card without providing value");
 		}
@@ -51,9 +53,9 @@ public class Card {
 	
 	@Override
 	public String toString() {
-		String result = this.color.toString() + this.type.toString();
+		String result = this.color.toString() + " " + this.type.toString();
 		if (type == Type.NUMERIC) {
-			result += this.value;
+			result += " " + this.value;
 		}
 		return result;
 	}

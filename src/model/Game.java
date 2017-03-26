@@ -17,6 +17,10 @@ public class Game {
 		this.turn = 0;
 	}
 	
+	public void deal() {
+		
+	}
+	
 	public void executeTurn() {
 		Player player = players.get(turn);
 		Card topPileCard = discardPile.peek();
