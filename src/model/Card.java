@@ -2,11 +2,11 @@ package model;
 
 public class Card {
 
-	enum Color {
-		RED, YELLOW, GREEN, BLUE
+	public enum Color {
+		RED, YELLOW, GREEN, BLUE, NONE
 	}
 	
-	enum Type {
+	public enum Type {
 		NUMERIC, SKIP, DRAW_TWO, REVERSE, WILD, WILD_DRAW_FOUR
 	}
 	
@@ -17,13 +17,36 @@ public class Card {
 	public Card(Color color, Type type) {
 		this.color = color;
 		this.type = type;
-		this.value = -1;
+		switch (type) {
+			case SKIP:
+			case DRAW_TWO:
+			case REVERSE:
+				value = 20;
+			case WILD:
+			case WILD_DRAW_FOUR:
+				value = 50;
+				this.color = Color.NONE;
+			case NUMERIC:
+				System.out.println("Attempt to instantiate numeric card without providing value");
+		}
 	}
 	
 	public Card(Color color, Type type, int value) {
 		this.color = color;
 		this.type = type;
 		this.value = value;
+	}
+	
+	public Color getColor() {
+		return this.color;
+	}
+	
+	public Type getType() {
+		return this.type;
+	}
+	
+	public int getValue() {
+		return this.value;
 	}
 	
 	@Override

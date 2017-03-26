@@ -1,16 +1,17 @@
 package model;
 
-import java.util.ArrayList;
+import java.util.Stack;
 
 public class Deck {
 
-	private ArrayList<Card> cards;
+	private Stack<Card> cards;
 	
 	public Deck() {
-		cards = new ArrayList<Card>(108);
+		cards = new Stack<Card>();
+		// TODO: Populate deck with cards
 	}
 	
-	public ArrayList<Card> getCards() {
+	public Stack<Card> getCards() {
 		return this.cards;
 	}
 }
