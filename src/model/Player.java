@@ -27,6 +27,12 @@ public class Player {
 		return false;
 	}
 	
+	/**
+	 * Determines which card should be played based on the cards currently in the
+	 * player's hand and the top card of the discard pile. 
+	 * @param topPileCard
+	 * @return The card to play
+	 */
 	public Card playCard(Card topPileCard) {
 		// TODO: Determine which card to play
 		return null;
